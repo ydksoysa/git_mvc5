@@ -3,13 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package edu.ijse.mvc.view;
+import edu.ijse.mvc.controller.ItemController;
 import edu.ijse.mvc.dto.ItemDto;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author dilshara
  */
 public class ItemForm extends javax.swing.JFrame {
+     private ItemController itemController = new ItemController();
 
     /**
      * Creates new form ItemForm
@@ -285,5 +288,13 @@ public class ItemForm extends javax.swing.JFrame {
                 Integer.parseInt(txtQoh.getText()));
       
         System.out.println(itemDto);
+        
+             System.out.println(itemDto);
+        try {
+            String resp = itemController.saveItem(itemDto);
+            JOptionPane.showMessageDialog(this, resp);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }
 }
