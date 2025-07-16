@@ -5,14 +5,19 @@
 package edu.ijse.mvc.controller;
 
 import edu.ijse.mvc.dto.ItemDto;
+import edu.ijse.mvc.model.ItemModel;
+
 
 /**
  *
  * @author dilshara
  */
 public class ItemController {
+        private ItemModel itemModel = new ItemModel();
+        
      public String saveItem(ItemDto itemDto) throws Exception{
-        return "Success";
+       
+         return itemModel.saveItem(itemDto);
     }
     
 }
